@@ -218,7 +218,7 @@ export default function VinylFloorLayers() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen py-70 bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden relative flex items-center"
+      className="min-h-screen py-50 bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden relative flex items-center"
     >
       {/* Dynamic background effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -509,10 +509,10 @@ export default function VinylFloorLayers() {
                           </motion.circle>
                         </svg>
 
-                        {/* Animated arrow at the end */}
+                        {/* Elegant endpoint indicator */}
                         <motion.div
                           className="absolute"
-                          style={{ right: "0px", top: "10px" }}
+                          style={{ right: "4px", top: "10px" }}
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
                           transition={{
@@ -522,37 +522,32 @@ export default function VinylFloorLayers() {
                             damping: 10,
                           }}
                         >
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                              stroke={layer.borderColor}
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-
-                          {/* Pulse effect behind arrow */}
+                          {/* Glowing dot at the end */}
                           <motion.div
-                            className="absolute inset-0 rounded-full"
-                            style={{ backgroundColor: layer.borderColor }}
-                            initial={{ opacity: 0.3, scale: 0.8 }}
+                            className="w-5 h-5 rounded-full"
+                            style={{
+                              backgroundColor: `${layer.borderColor}30`,
+                              boxShadow: `0 0 10px ${layer.borderColor}80`,
+                            }}
                             animate={{
-                              opacity: [0.3, 0.1, 0.3],
-                              scale: [0.8, 1.2, 0.8],
+                              opacity: [0.7, 1, 0.7],
+                              boxShadow: [
+                                `0 0 8px ${layer.borderColor}60`,
+                                `0 0 12px ${layer.borderColor}90`,
+                                `0 0 8px ${layer.borderColor}60`,
+                              ],
                             }}
                             transition={{
                               duration: 2,
                               repeat: Infinity,
                               repeatType: "loop",
                             }}
-                          />
+                          >
+                            <motion.div
+                              className="absolute inset-0 m-auto w-2 h-2 rounded-full"
+                              style={{ backgroundColor: layer.borderColor }}
+                            />
+                          </motion.div>
                         </motion.div>
                       </motion.div>
                     )}
@@ -867,7 +862,7 @@ export default function VinylFloorLayers() {
             Our 7-layer vinyl flooring technology combines durability, comfort,
             and aesthetics to create a premium flooring solution for any space.
           </p>
-          <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl hover:shadow-blue-900/20">
+          <button className="px-6 py-3 bg-gradient-to-r  bg-blue-600 rounded-full text-white font-medium transition-all shadow-lg hover:shadow-xl hover:shadow-blue-900/20">
             Request a Sample
           </button>
         </motion.div>
